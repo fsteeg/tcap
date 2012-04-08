@@ -1,0 +1,11 @@
+h1. About
+
+An old, simple Eclipse plug-in for "TC algorithm competitions":http://en.wikipedia.org/wiki/TopCoder#Algorithm_competitions using Java and JUnit.
+
+See "blog post":http://fsteeg.com/2007/09/26/topcoder-algorithm-competition-eclipse-plug-in/ for basic usage.
+
+h1. Build
+
+Build with Maven 3: @mvn clean install@
+
+Install from p2 repo archive: @com.quui.tc.repo/target/com.quui.tc.repo.zip@
