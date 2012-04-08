@@ -1,11 +1,17 @@
+/*******************************************************************************
+ * Copyright (c) 2004 Fabian Steeg. All rights reserved. This program and
+ * the accompanying materials are made available under the terms of the Eclipse
+ * Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * <p/>
+ * Contributors: Fabian Steeg
+ *******************************************************************************/
 /**
  * @author Fabian Steeg
  * Created on 07.11.2004
  */
-package com.quui.tc.gen;
+package com.quui.tc;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -54,7 +60,7 @@ public class CodeGen {
 		 * what the arena applet uses.
 		 */
 		String sep = problemStatement.startsWith("\r\n") ? "\r\n"
-				: problemStatement.charAt(0) + "";// System.getProperty("line.separator");
+				: problemStatement.charAt(0) + "";
 		/* but let's not depend entirely on that break first in the text */
 		if (!(sep.equals("\r") || sep.equals("\r\n") || sep.equals("\n")))
 			sep = System.getProperty("line.separator");
@@ -90,29 +96,6 @@ public class CodeGen {
 	}
 
 	public String createSolutionText() {
-
-		// Map<String,String> map = new HashMap<String,String>();
-		//        
-		// map.put(Constants.AUTHOR_NAME, System.getProperty("user.name"));
-		// map.put(Constants.CLASS_NAME, className);
-		//        
-		// String returnValue = "null";
-		// if (returnType.equals("boolean"))
-		// returnValue = "true";
-		// else if (returnType.equals("char"))
-		// returnValue = "'0'";
-		// else if (returnType.equals("long"))
-		// returnValue = "-1L";
-		// else if (returnType.equals("int") || returnType.equals("double")
-		// || returnType.equals("float"))
-		// returnValue = "-1";
-		//        
-		// map.put(Constants.RETURN_VALUE, returnValue);
-		// map.put(Constants.RETURN_TYPE, returnType);
-		// map.put(Constants.SIGNATURE, sig);
-		// SolutionGenerator gen = new SolutionGenerator();
-		// return gen.generate(map);
-
 		StringBuffer buf = new StringBuffer();
 		buf.append("public class ").append(className).append(" {\r").append(
 				"\t public ").append(sig).append(" {\r\t\t ");
@@ -214,11 +197,8 @@ public class CodeGen {
 
 	public String createTests() {
 		StringBuffer result = new StringBuffer();
-		// regex: \d for digit
-		// the full regex for smth like this: blank 2) blank blank
 		String[] examples = problemStatement.substring(
 				problemStatement.indexOf("Examples")).split("\\s\\d\\)\\s\\s");
-		// }
 		for (int i = 1; i < examples.length; i++) {
 			if (examples[i].indexOf("Returns:") == -1)
 				continue;
@@ -228,7 +208,6 @@ public class CodeGen {
 					" throws Exception { \r\t\t ");
 
 			// first element is "Examples:" therefore we start with 1
-			// if (returns.indexOf("[]") != -1) {
 			result.append(returnType + " correct;\r");
 			result.append("\t\t " + returnType + " result;\r");
 
@@ -239,10 +218,8 @@ public class CodeGen {
 					.indexOf("Returns:"));
 			allParams = allParams.replace((char) 160, ' ');
 			allParams = allParams.trim();
-			// System.out.println((int)allParams.charAt(0));
 			// using stringtokenizer cause we need the delims...
 			StringTokenizer t = new StringTokenizer(allParams, "\r\n", true);
-			// String[] in = allParams.split("\\s");
 
 			StringBuffer toTest = new StringBuffer();
 			int k = 0;
@@ -252,31 +229,20 @@ public class CodeGen {
 			for (int j = 0; j < numTok; j++) {
 				String s = t.nextToken();
 				s = s.trim();
-				// System.out.println("token in tokenizer: " + s);
-				// regex: non-whitespace: \S
-				// Pattern p = Pattern.compile("\\S");
-				// Matcher m = p.matcher(in[j]);
-				// use with m.find()
 				if ((inString || inArray) && s.equals(" "))
 					toTest.append(s);
 				if (!s.equals(" ") && !s.equals("")
 						&& s.indexOf("" + (char) 160) == -1) {
-
-					// System.out.println("param number " + j + " ist " + s);
-
 					// recent param is a string
 					if (!inString && params[k].equals("String")
 							&& s.startsWith("\"")) {
-						// System.out.println("##### start string!");
 						inString = true;
 						if (s.length() > 1 && s.endsWith("\"")) {
-							// System.out.println("##### end string!");
 							inString = false;
 						}
 						toTest.append(s);
 					} else if (inString && params[k].equals("String")
 							&& s.endsWith("\"")) {
-						// System.out.println("##### end string!");
 						inString = false;
 						toTest.append(s);
 					}
@@ -288,14 +254,11 @@ public class CodeGen {
 							inArray = true;
 					} else {
 						toTest.append(s);
-						// System.out.println("s: " + s);
 						if ((params[k].equals("double") || params[k]
 								.equals("float"))) {
-
 							if (s.indexOf(".") == -1) {
 								toTest.append(".0");
 							}
-
 						}
 						if (params[k].indexOf("[]") == -1) {
 							inArray = false;

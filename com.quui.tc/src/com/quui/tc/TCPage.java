@@ -1,3 +1,12 @@
+/*******************************************************************************
+ * Copyright (c) 2004 Fabian Steeg. All rights reserved. This program and
+ * the accompanying materials are made available under the terms of the Eclipse
+ * Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * <p/>
+ * Contributors: Fabian Steeg
+ *******************************************************************************/
+
 /**
  * @author Fabian Steeg
  * Created on 23.09.2004
@@ -32,9 +41,7 @@ import com.quui.tc.TCWizard;
 
 /**
  * The "New" wizard page allows setting the container for the new files.
- * 
  */
-
 public class TCPage extends WizardPage {
     private Text containerTextWidget;
 
@@ -45,26 +52,6 @@ public class TCPage extends WizardPage {
     private String fileText = "";
 
     private ISelection selection;
-
-//    String advice1 = "- Move the chat area out of sight." +
-//            "\n- Always understand the problem and how the examples work." +
-//            "\n- Find a solution on paper. Write it down in pseudocode." +
-//            "\n";
-//
-//    String advice2 = "- Take your time, take doubts serious." +
-//            "\n- Think it through before submitting." +
-//            "\n- On longer numbers or words in the statement check for typos." +
-//            "\n- Test for border cases, like 0, \"\", max." +
-//            "\n- No blind, guessed, head-over-heels challenges.";
-
-//    String advice3 = "";
-//
-//    String advice4 = "4) ";
-//
-//    String advice5 = "5) ";
-
-//    String[] advice = new String[] { advice1, advice2/*, advice3, advice4,
-//            advice5 */};
 
     /**
      * 
@@ -109,18 +96,6 @@ public class TCPage extends WizardPage {
         });
         label = new Label(container, SWT.NULL);
         label.setText("");
-//        Label l = new Label(container, SWT.BORDER);
-//        l.setEditable(false);
-//        l.setSize(200, 50);
-//        l.setLayoutData(new GridData());
-//        String text = "";
-//        for (String s : advice) {
-//            text = text + s + "\r";
-//        }
-//        text = text.trim();
-//        l.setText(text);
-//        label = new Label(container, SWT.NULL);
-//        label = new Label(container, SWT.NULL);
         label.setText("Problem \rStatement:");
 
         problemTextWidget = new Text(container, SWT.BORDER | SWT.MULTI
@@ -182,14 +157,12 @@ public class TCPage extends WizardPage {
     /**
      * Ensures that both text fields are set.
      */
-
     private void dialogChanged() {
         String container = getContainerName();
         String fileName = getFileName();
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         IResource resource = root.findMember(new Path(container));
         IResource r = ((IContainer) resource).findMember(fileName);
-        int dotLoc = fileName.lastIndexOf('.');
         if (problemTextWidget.getText().indexOf("Problem Statement") == -1) {
             updateStatus("Please paste a TopCoder Algorithm Competition Problem Statement.");
             ((TCWizard) this.getWizard()).setHasProblemDescription(false);
@@ -230,7 +203,6 @@ public class TCPage extends WizardPage {
      */
     public IWizardPage getNextPage() {
         ((TCWizard) getWizard()).containerName = getContainerName();
-        // ((TCWizard) getWizard()).fileName = getFileName();
         return super.getNextPage();
     }
 

@@ -9,3 +9,7 @@ h1. Build
 Build with Maven 3: @mvn clean install@
 
 Install from p2 repo archive: @com.quui.tc.repo/target/com.quui.tc.repo.zip@
+
+h1. License
+
+"Eclipse Public License (EPL)":http://www.eclipse.org/legal/epl-v10.html

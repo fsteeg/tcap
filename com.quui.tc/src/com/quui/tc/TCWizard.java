@@ -1,3 +1,12 @@
+/*******************************************************************************
+ * Copyright (c) 2004 Fabian Steeg. All rights reserved. This program and
+ * the accompanying materials are made available under the terms of the Eclipse
+ * Public License v1.0 which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * <p/>
+ * Contributors: Fabian Steeg
+ *******************************************************************************/
+
 /**
  * @author Fabian Steeg
  * Created on 07.11.2004
@@ -43,7 +52,6 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.cheatsheets.OpenCheatSheetAction;
 import org.eclipse.ui.ide.IDE;
 
-import com.quui.tc.gen.CodeGen;
 
 /**
  * the wizard to build an tc solution.
@@ -53,8 +61,6 @@ import com.quui.tc.gen.CodeGen;
 public class TCWizard extends Wizard implements INewWizard {
 
     private IStructuredSelection selection;
-
-    private IWorkbench workbench;
 
     protected static final ImageDescriptor IMAGE = TCPlugin
             .imageDescriptorFromPlugin("com.quui.tc", "icons/tc-banner.png");
@@ -80,7 +86,6 @@ public class TCWizard extends Wizard implements INewWizard {
     }
 
     public void init(IWorkbench workbench, IStructuredSelection selection) {
-        this.workbench = workbench;
         this.selection = selection;
         this.window = workbench.getActiveWorkbenchWindow();
         setWindowTitle("New TopCoder Algorithm Competition Solution");
@@ -98,8 +103,6 @@ public class TCWizard extends Wizard implements INewWizard {
     }
 
     public void createPageControls(Composite pageContainer) {
-        // if this was done nothing would be there:
-        // super.createPageControls(pageContainer);
     }
 
     public void addPages() {
@@ -107,9 +110,6 @@ public class TCWizard extends Wizard implements INewWizard {
         addPage(tcPage);
     }
 
-    /**
-     * 
-     */
     public boolean performFinish() {
         Action a = new OpenCheatSheetAction(
                 "com.quui.tc.algorithm.plugin.cheatsheet");
@@ -165,7 +165,7 @@ public class TCWizard extends Wizard implements INewWizard {
             return false;
         }
         try {
-            IWorkbenchPage page = window.getActivePage();// workbench.getActiveWorkbenchWindow()PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
+            IWorkbenchPage page = window.getActivePage();
             IDE.openEditor(page, test);
             this.logger.finer("opened a " + solution.getClass().toString());
         } catch (Throwable t) {
@@ -173,7 +173,6 @@ public class TCWizard extends Wizard implements INewWizard {
         }
         try {
             JUnitLaunchShortcut f = new JUnitLaunchShortcut();
-
             f
                     .launch(PlatformUI.getWorkbench()
                             .getActiveWorkbenchWindow().getActivePage()
@@ -181,10 +180,6 @@ public class TCWizard extends Wizard implements INewWizard {
             IWorkbenchPage page = window.getActivePage();
             IMarker marker = null;
             marker = solution.createMarker(IMarker.TASK);
-            // for (String a : tcPage.advice) {
-            // marker = solution.createMarker(IMarker.TASK);
-            // marker.setAttribute(IMarker.MESSAGE, a);
-            // }
             marker.setAttribute(IMarker.CHAR_START, gen.getStartingPoint());
             marker.setAttribute(IMarker.CHAR_END, gen.getStartingPoint());
             IDE.openEditor(page, marker);
