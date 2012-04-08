@@ -213,7 +213,7 @@ litigation.
    </license>
 
    <plugin
-         id="com.quui.tc.algorithm.plugin"
+         id="com.quui.tc"
          download-size="0"
          install-size="0"
          version="0.0.0"/>

@@ -10,6 +10,8 @@ Build with Maven 3: @mvn clean install@
 
 Install from p2 repo archive: @com.quui.tc.repo/target/com.quui.tc.repo.zip@
 
+"!https://secure.travis-ci.org/fsteeg/tcap.png!":http://travis-ci.org/fsteeg/tcap
+
 h1. License
 
-"Eclipse Public License (EPL)":http://www.eclipse.org/legal/epl-v10.html
+Eclipse Public License (EPL): "http://www.eclipse.org/legal/epl-v10.html":http://www.eclipse.org/legal/epl-v10.html
