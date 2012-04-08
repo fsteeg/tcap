@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TopCoder Algorithm Competition Java Plugin
+Bundle-SymbolicName: com.quui.tc; singleton:=true
+Bundle-Version: 1.2.4
+Bundle-ClassPath: tc.jar
+Bundle-Activator: com.quui.tc.TCPlugin
+Bundle-Vendor: www.quui.com
+Bundle-Localization: plugin
+Export-Package: 
+ com.quui.tc,
+ com.quui.tc.gen
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.jdt.core,
+ org.eclipse.jdt.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.debug.core,
+ org.eclipse.jdt.launching,
+ org.eclipse.debug.ui,
+ org.junit,
+ org.eclipse.pde,
+ org.eclipse.pde.junit.runtime,
+ org.eclipse.jdt.junit,
+ org.eclipse.ui.cheatsheets
+Eclipse-LazyStart: true

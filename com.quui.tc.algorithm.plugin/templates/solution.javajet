@@ -1,0 +1,12 @@
+<%@ jet package="com.quui.tc.gen" imports="java.util.*" class="SolutionGenerator" %>
+<%Map map = (Map) argument;%>
+/**
+ * A TopCoder Algorithm Competition Solution 
+ * (http://www.topcoder.com/tc)
+ */
+public class <%=map.get(Constants.CLASS_NAME)%> {
+    public <%=map.get(Constants.SIGNATURE)%> {
+    		
+        return <%=map.get(Constants.RETURN_VALUE)%>;
+    }
+}

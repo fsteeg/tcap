@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Strategies">
+	<intro>
+		<description>
+			Some strategies when approaching problems...
+		</description>
+	</intro>
+	<item title="Sorting">
+		<description>
+			Often, a problem can be much simplified by fist sorting the
+			input and then iterating over it from front or from end.
+		</description>
+	</item>
+	<item title="Sets and Bits">
+		<description>
+			Sets and their subsets can be represented using bits: an int
+			represents a 32-element set, a long a 64-element set. Using
+			the bitwise operators, set operation can be done with the
+			bits: Union (A | B), intersection (A &amp; B), substraction
+			(A &amp; ~B), negation (ALL ^ A), set (A |= 1 &lt;&lt; bit),
+			clear (a &amp;= ~(1 &lt;&lt; bit)), test (A &amp; 1 &lt;&lt;
+			bit) != 0).
+		</description>
+	</item>
+	<item title="Brute-Force">
+		<description>
+			Division II medium and division I easy problems can usually
+			be solved with a brute-force strategy. It has many faces and
+			could be applied to all sorts of permutation and simulation
+			problems.
+		</description>
+	</item>
+	<item title="Recursion">
+		<description>
+			Think of the problem as a decision tree to be traversed.
+			Here, you can rule out branches that are irrelevant.
+			Identify each recursion step clearly, think of what is
+			needed and code the recursive solution with the parameters
+			you figured out to be required.
+		</description>
+	</item>
+	<item title="Memoization">
+		<description>
+			Given a clean recursive solution, with an optimal subproblem
+			solution solved in every step of the recursion, store each
+			optimal subproblem solution in a table or a map. When
+			entering the recursive method, before computing the
+			subproblem solution, look it up in the table or the map and
+			if present, skip the computation for this step.
+		</description>
+	</item>
+	<item title="Dynamic Programming">
+		<description>
+			Initialize a table representing optimal subproblem solutions
+			with initial values. Identify how the main problem is
+			decomposable in subproblems. Then solve the main problem by
+			solving the subproblems first. While solving the
+			subproblems, fill in the table and reuse values in the table
+			from previous steps, basically simulating the recursive
+			solution to the problme by filling in the table. In the end,
+			the result should be somewhere in the table, ready to be
+			used.
+		</description>
+	</item>
+</cheatsheet>

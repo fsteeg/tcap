@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Maths Stuff">
+	<intro>
+		<description>
+			Some of the maths stuff sometimes needed...
+		</description>
+	</intro>
+	<item title="Rule of Three">
+		<description>If 40 are 100%, 30 are 100 / 40 * 30</description>
+	</item>
+	<item title="Pythagorean Theorem">
+		<description>c = Math.sqrt(a*a+b*b) since a2+b2=c2</description>
+	</item>
+	<item title="Percentages">
+		<description>
+			Substract 40% with "all * (1.0 - 40 / 100)", 1% of x is "x *
+			0.01"
+		</description>
+	</item>
+	<item title="Reducing Fractions">
+		<description>
+			Use the Euclidic algorithm for GCD, then the new nominator
+			is "n / gcd(n,d)" and the new denominator is "d / gcd(n,
+			d)".
+		</description>
+	</item>
+	<item title="Floating to Fraction">
+		<description>
+			Nominator: "x / x % 1", Denominator: 1 / x % 1
+		</description>
+	</item>
+	<item title="Equating Equations">
+		<description>Factor out, factor in.</description>
+	</item>
+	<item title="Modulo">
+		<description>
+			y % x splits y in chunks of size x, the result being the
+			size of the rest, the started, incomplete chunk , meaning x
+			% 45 = 29 means the last chunk is only of size 29, not 45.
+			Also useful to do something on every i-th iteration.
+		</description>
+	</item>
+</cheatsheet>

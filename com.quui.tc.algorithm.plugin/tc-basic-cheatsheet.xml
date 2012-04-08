@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Basic Things">
+	<intro>
+		<description>Some basic stuff to consider...</description>
+	</intro>
+	<item title="Move the chat area out of sight">
+		<description>
+			Seeing people submit solutions on the 500 pointer when I'm
+			about to open it makes me terribly nervous.
+		</description>
+	</item>
+	<item title="Understand the problem">
+		<description>
+			Always understand what the problem is and how the examples
+			work.
+		</description>
+	</item>
+	<item title="Find a solution on paper">
+		<description>
+			Find a solution on paper and write it down using pseudocode.
+			This is very important, it greatly increases coding time...
+		</description>
+	</item>
+	<item title="Code your solution">
+		<description>
+			Take your time, take doubts serious. Think it through before
+			submitting. On longer numbers or words in the problem
+			statement check for typos. Test for border cases like 0, ""
+			max and min values.
+		</description>
+	</item>
+	<item title="Keep cool during challenge phase">
+		<description>
+			Keep cool, consider what you have, remember you can fail
+			system test on solutions you think are ok. Don't get into
+			the challenge fever, do no guessed, head over heels
+			challenges.
+		</description>
+	</item>
+	<item title="Caveats: Parens, Doubles, API">
+		<description>
+			Be careful about parens (better more than less, for
+			readability) and doubles , don't forget casting or using
+			double literals. Don't forget the API : Comparable,
+			arraycopy, split, Set, addAll, binarySearch and even stuff
+			like Rectangle and Point.
+		</description>
+	</item>
+</cheatsheet>

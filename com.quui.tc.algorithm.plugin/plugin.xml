@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+    	<!-- wizard-contribution, for creation of a new assessment -->
+   	<extension
+         id="com.quui.tc.id.wizard.extension"
+         name="TopCoder Solution"
+         point="org.eclipse.ui.newWizards">
+        	<category
+        		name="TopCoder"
+        		id="com.quui.tc.id.wizard.category">
+        	</category>
+        	<wizard
+        		name="TopCoder Algorithm Solution"
+        		icon="icons/tc.png"
+        		category="com.quui.tc.id.wizard.category"
+        		class="com.quui.tc.TCWizard"
+        		id="com.quui.tc.id.wizard">
+        		<description>
+        			Create a Template for a TopCoder Algorithm Solution including Unit-Test
+        		</description>
+        	</wizard>
+   	</extension>
+    <extension
+          point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+       <cheatsheet
+             category="com.quui.tc.algorithm.plugin.category2"
+             composite="true"
+             contentFile="tc-algo-cheatsheet.xml"
+             id="com.quui.tc.algorithm.plugin.cheatsheet"
+             name="Algorithm Competition"/>
+       <category
+             id="com.quui.tc.algorithm.plugin.category2"
+             name="TopCoder"/>
+       <cheatsheet
+			 category="com.quui.tc.algorithm.plugin.category2"
+             composite="false"
+             contentFile="tc-basic-cheatsheet.xml"
+             id="basicCheatSheet"
+             name="Basic Cheatsheet"/>
+       <cheatsheet
+             category="com.quui.tc.algorithm.plugin.category2"
+             composite="false"
+             contentFile="tc-maths-cheatsheet.xml"
+             id="mathsCheatSheet"
+             name="Maths Cheatsheet"/>
+       <cheatsheet
+             category="com.quui.tc.algorithm.plugin.category2"
+             composite="false"
+             contentFile="tc-strategies-cheatsheet.xml"
+             id="strategiesCheatSheet"
+             name="Strategies Cheatsheet"/>
+    </extension>
+</plugin>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compositeCheatsheet name="Algorithm Competition">
+	<taskGroup name="Algorithm Competition" kind="choice">
+		<intro>
+			<description>
+				Some things I consider useful to remember during a
+				TopCoder Algorithm Competition.
+			</description>
+		</intro>
+		<task kind="cheatsheet" name="Basics"
+			id="basicCheatSheet">
+			<param name="id" value="basicCheatSheet" />
+			<param name="showIntro" value="false" />
+			<intro>Basic things to remember...</intro>
+		</task>
+		<task kind="cheatsheet" name="Maths"
+			id="mathsCheatSheet">
+			<param name="id" value="mathsCheatSheet" />
+			<param name="showIntro" value="false" />
+			<intro>Some of that maths stuff sometimes needed...</intro>
+		</task>
+		<task kind="cheatsheet" name="Strategies"
+			id="strategiesCheatSheet">
+			<param name="id" value="strategiesCheatSheet" />
+			<param name="showIntro" value="false" />
+			<intro>Some Strategies for approaching problems...</intro>
+		</task>
+	</taskGroup>
+</compositeCheatsheet>
