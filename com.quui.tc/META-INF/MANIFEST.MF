@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: TopCoder Algorithm Competition Java Plugin
 Bundle-SymbolicName: com.quui.tc;singleton:=true
-Bundle-Version: 0.2.4
+Bundle-Version: 0.2.5.qualifier
 Bundle-ClassPath: tc.jar
 Bundle-Activator: com.quui.tc.TCPlugin
 Bundle-Vendor: www.quui.com

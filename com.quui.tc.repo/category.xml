@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.quui.features.tc.feature_0.2.4.qualifier.jar" id="com.quui.features.tc" version="0.2.4.qualifier">
+   <feature url="features/com.quui.features.tc.feature_0.2.5.qualifier.jar" id="com.quui.features.tc" version="0.2.5.qualifier">
       <category name="com.quui"/>
    </feature>
    <category-def name="com.quui.features.tc" label="Topcoder Algorithm Competition Eclipse Plugin">
