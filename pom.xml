@@ -57,7 +57,7 @@
 						<artifact>
 							<groupId>com.quui</groupId>
 							<artifactId>com.quui.features.tc</artifactId>
-							<version>0.2.4</version>
+							<version>${project.version}</version>
 							<classifier>tcap</classifier>
 						</artifact>
 					</target>
