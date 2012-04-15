@@ -3,47 +3,21 @@
 	<intro>
 		<description>Some basic stuff to consider...</description>
 	</intro>
-	<item title="Move the chat area out of sight">
+	<item title="Set up an environment that allows you to focus">
 		<description>
-			Seeing people submit solutions on the 500 pointer when I'm
-			about to open it makes me terribly nervous.
+			For me, this means things like closing my mail client, and moving the chat area of the TC arena out of sight.
 		</description>
 	</item>
 	<item title="Understand the problem">
 		<description>
-			Always understand what the problem is and how the examples
-			work.
-		</description>
+			Always understand what the actual problem is and how the examples work. Don&apos;t jump to previous sub-solutions to seemingly similar problems. Draft a solution for the problem on paper, as detailed as required.		</description>
 	</item>
-	<item title="Find a solution on paper">
+	<item title="Implement your solution">
 		<description>
-			Find a solution on paper and write it down using pseudocode.
-			This is very important, it greatly increases coding time...
-		</description>
-	</item>
-	<item title="Code your solution">
-		<description>
-			Take your time, take doubts serious. Think it through before
-			submitting. On longer numbers or words in the problem
-			statement check for typos. Test for border cases like 0, ""
-			max and min values.
-		</description>
+			During implementation take your time, take doubts seriously. Think it through before submitting. On longer numbers or words in the problem statement check for typos. Test for border cases like 0, &quot;&quot; max and min values. Be careful about parens (better more than less, for readability) and doubles, don&apos;t forget casting or using double literals. Don&apos;t forget the API: Comparable, arraycopy, split, Set, addAll, binarySearch and even stuff like Rectangle and Point.Rectangle and Point.</description>
 	</item>
 	<item title="Keep cool during challenge phase">
-		<description>
-			Keep cool, consider what you have, remember you can fail
-			system test on solutions you think are ok. Don't get into
-			the challenge fever, do no guessed, head over heels
-			challenges.
-		</description>
-	</item>
-	<item title="Caveats: Parens, Doubles, API">
-		<description>
-			Be careful about parens (better more than less, for
-			readability) and doubles , don't forget casting or using
-			double literals. Don't forget the API : Comparable,
-			arraycopy, split, Set, addAll, binarySearch and even stuff
-			like Rectangle and Point.
-		</description>
+	  <description>
+	    Keep cool, consider what you have, remember you can fail system test on solutions you think are ok (and end up with a negative score with an unsuccessful challenge). Don&apos;t get into the challenge fever, do no guessed, head over heels challenges. Instead challenge for a precise case that you understand, and that is not covered by the tests.</description>
 	</item>
 </cheatsheet>
