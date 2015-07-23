@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004 Fabian Steeg. All rights reserved. This program and
+ * Copyright (c) 2004-2015 Fabian Steeg. All rights reserved. This program and
  * the accompanying materials are made available under the terms of the Eclipse
  * Public License v1.0 which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
@@ -259,6 +259,9 @@ public class CodeGen {
 							if (s.indexOf(".") == -1) {
 								toTest.append(".0");
 							}
+						}
+						if (params[k].equals("long")) {
+								toTest.append("L");
 						}
 						if (params[k].indexOf("[]") == -1) {
 							inArray = false;
