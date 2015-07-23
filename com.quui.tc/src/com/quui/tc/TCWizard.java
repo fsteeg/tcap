@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2004 Fabian Steeg. All rights reserved. This program and
+ * Copyright (c) 2004-2015 Fabian Steeg. All rights reserved. This program and
  * the accompanying materials are made available under the terms of the Eclipse
  * Public License v1.0 which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
@@ -37,7 +37,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.jdt.junit.launcher.JUnitLaunchShortcut;
-import org.eclipse.jface.action.Action;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -103,6 +102,8 @@ public class TCWizard extends Wizard implements INewWizard {
     }
 
     public void createPageControls(Composite pageContainer) {
+    	new OpenCheatSheetAction(
+                "com.quui.tc.algorithm.plugin.cheatsheet").run();
     }
 
     public void addPages() {
@@ -111,9 +112,6 @@ public class TCWizard extends Wizard implements INewWizard {
     }
 
     public boolean performFinish() {
-        Action a = new OpenCheatSheetAction(
-                "com.quui.tc.algorithm.plugin.cheatsheet");
-        a.run();
         if (tcPage != null) {
             gen = new CodeGen(tcPage.getProblemText());
             containerName = tcPage.getContainerName();
@@ -121,7 +119,7 @@ public class TCWizard extends Wizard implements INewWizard {
         saveFiles();
         return true;
     }
-
+    
     public boolean canFinish() {
         return hasProblemDescription;
     }
